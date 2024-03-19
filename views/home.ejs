@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 1.125rem;
+            font-family: "Poppins", sans-serif;
+            color: #111;
+        }
+
+        header nav ul,
+        header .d-flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            width: min(90rem, 90%);
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: #111;
+        }
+
+        header .d-flex {
+            justify-content: space-between;
+            padding: 25px 0;
+        }
+
+        @media screen and (max-width: 480px) {
+            header .d-flex {
+                flex-direction: column;
+                align-items: inherit;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header .logo {
+                margin-bottom: 15px;
+            }
+        }
+
+        header .logo a {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        header nav ul {
+            list-style: none;
+            column-gap: 25px;
+        }
+
+        @media screen and (max-width: 368px) {
+            header nav ul {
+                column-gap: 20px;
+            }
+        }
+
+        header nav ul li a {
+            font-size: 1rem;
+        }
+
+        @media screen and (max-width: 368px) {
+            header nav ul li a {
+                font-size: 0.938rem;
+            }
+        }
+
+        header nav ul li a:hover {
+            color: #de8893;
+        }
+
+        header nav ul li:nth-of-type(1) a {
+            color: #de8893;
+        }
+
+        header .content {
+            padding-top: 3em;
+            padding-bottom: 6em;
+            padding-inline: min(7vw, 6em);
+        }
+
+        header .content h1 {
+            font-size: clamp(2rem, 1.5294rem + 2.6471vw, 4rem);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        header .content p {
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+            font-family: "Playfair Display", serif;
+            color: #de8893;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: "big-1 big-1 small-1 small-2" "big-1 big-1 big-2 big-2" "small-3 small-4 big-2 big-2";
+        }
+
+        @media screen and (max-width: 760px) {
+            main {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas: "big-2 small-3" "small-4 big-1" "small-1 small-2";
+            }
+        }
+
+        @media screen and (max-width: 580px) {
+            main {
+                grid-template-areas: "big-2 big-2" "small-3 small-4" "big-1 big-1" "small-1 small-2";
+            }
+        }
+
+        main img {
+            width: 100%;
+            display: block;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        main .big-1 {
+            grid-area: big-1;
+        }
+
+        main .big-2 {
+            grid-area: big-2;
+        }
+
+        main .small-1 {
+            grid-area: small-1;
+        }
+
+        main .small-2 {
+            grid-area: small-2;
+        }
+
+        main .small-3 {
+            grid-area: small-3;
+        }
+
+        main .small-4 {
+            grid-area: small-4;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="d-flex">
+                <div class="logo"><a href="#">canna</a></div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="content">
+                <h1>Hello. I'm Gilfoyle. <br />
+                    I make brands stand out
+                </h1>
+                <p><abbr title="0800 987 789">Hire me,</abbr> if you need awesome design.</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="big-1">
+            <img src="https://images.unsplash.com/photo-1528697203043-733dafdaa316?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=812&q=80"
+                alt="">
+        </div>
+        <div class="small-1">
+            <img src="https://images.unsplash.com/photo-1544488994-3a0753185c37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+                alt="">
+        </div>
+        <div class="small-2">
+            <img src="https://images.unsplash.com/photo-1454944338482-a69bb95894af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80"
+                alt="">
+        </div>
+        <div class="big-2">
+            <img src="https://images.unsplash.com/photo-1429679310900-bad303d0e63a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                alt="">
+        </div>
+        <div class="small-3" alt="">
+            <img src="https://images.unsplash.com/photo-1538426455889-1311ea3dad57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+                alt="">
+        </div>
+        <div class="small-4">
+            <img src="https://images.unsplash.com/photo-1561383507-2777ad5d74a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                alt="">
+        </div>
+    </main>
+</body>
+
+</html>
