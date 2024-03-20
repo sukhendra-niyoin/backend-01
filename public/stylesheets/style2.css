@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.125rem;
+    font-family: "Poppins", sans-serif;
+    color: #111;
+}
+
+header nav ul,
+header .d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: min(90rem, 90%);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+}
+
+header .d-flex {
+    justify-content: space-between;
+    padding: 25px 0;
+}
+
+@media screen and (max-width: 480px) {
+    header .d-flex {
+        flex-direction: column;
+        align-items: inherit;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header .logo {
+        margin-bottom: 15px;
+    }
+}
+
+header .logo a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+header nav ul {
+    list-style: none;
+    column-gap: 25px;
+}
+
+@media screen and (max-width: 368px) {
+    header nav ul {
+        column-gap: 20px;
+    }
+}
+
+header nav ul li a {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 368px) {
+    header nav ul li a {
+        font-size: 0.938rem;
+    }
+}
+
+header nav ul li a:hover {
+    color: #de8893;
+}
+
+header nav ul li:nth-of-type(1) a {
+    color: #de8893;
+}
+
+header .content {
+    padding-top: 3em;
+    padding-bottom: 6em;
+    padding-inline: min(7vw, 6em);
+}
+
+header .content h1 {
+    font-size: clamp(2rem, 1.5294rem + 2.6471vw, 4rem);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+header .content p {
+    margin-top: 12px;
+    letter-spacing: 0.5px;
+    font-family: "Playfair Display", serif;
+    color: #de8893;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "big-1 big-1 small-1 small-2" "big-1 big-1 big-2 big-2" "small-3 small-4 big-2 big-2";
+}
+
+@media screen and (max-width: 760px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "big-2 small-3" "small-4 big-1" "small-1 small-2";
+    }
+}
+
+@media screen and (max-width: 580px) {
+    main {
+        grid-template-areas: "big-2 big-2" "small-3 small-4" "big-1 big-1" "small-1 small-2";
+    }
+}
+
+main img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .big-1 {
+    grid-area: big-1;
+}
+
+main .big-2 {
+    grid-area: big-2;
+}
+
+main .small-1 {
+    grid-area: small-1;
+}
+
+main .small-2 {
+    grid-area: small-2;
+}
+
+main .small-3 {
+    grid-area: small-3;
+}
+
+main .small-4 {
+    grid-area: small-4;
+}

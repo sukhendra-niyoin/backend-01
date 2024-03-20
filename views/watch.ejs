@@ -6,134 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Watch</title>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+    <link rel="stylesheet" href="../stylesheets/style3.css">
 
-        *,
-        *::after,
-        *::before {
-            box-sizing: border-box;
-            font-family: 'Comfortaa', cursive;
-        }
-
-        body {
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-
-        .clock {
-            background: #e0e0e0;
-            box-shadow: 8px 8px 19px #c7c7c7,
-                -8px -8px 19px #f9f9f9;
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            position: relative;
-
-        }
-
-        .clock .number {
-            color: #31344b;
-            --rotation: 0;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transform: rotate(var(--rotation));
-            z-index: 10;
-            font-size: 20px;
-        }
-
-        .clock .number1 {
-            --rotation: 30deg;
-        }
-
-        .clock .number2 {
-            --rotation: 60deg;
-        }
-
-        .clock .number3 {
-            --rotation: 90deg;
-        }
-
-        .clock .number4 {
-            --rotation: 120deg;
-        }
-
-        .clock .number5 {
-            --rotation: 150deg;
-        }
-
-        .clock .number6 {
-            --rotation: 180deg;
-        }
-
-        .clock .number7 {
-            --rotation: 210deg;
-        }
-
-        .clock .number8 {
-            --rotation: 240deg;
-        }
-
-        .clock .number9 {
-            --rotation: 270deg;
-        }
-
-        .clock .number10 {
-            --rotation: 300deg;
-        }
-
-        .clock .number11 {
-            --rotation: 330deg;
-        }
-
-        .clock .hand {
-            --rotation: 0;
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            background-color: #31344b;
-            transform-origin: bottom;
-            z-index: 10;
-            transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
-        }
-
-        .clock::after {
-            content: '';
-            position: absolute;
-            background-color: #31344b;
-            z-index: 11;
-            width: 15px;
-            height: 15px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-        }
-
-        .clock .hand.second {
-            width: 2px;
-            height: 40%;
-            background-color: #cf000f;
-        }
-
-        .clock .hand.minute {
-            width: 3px;
-            height: 36%;
-            background-color: #31344b;
-        }
-
-        .clock .hand.hour {
-            width: 4px;
-            height: 32%;
-            background-color: #31344b;
-        }
-    </style>
 </head>
 
 <body>
@@ -158,29 +32,8 @@
         <div class="number number12">XII</div>
     </div>
 
-    <script>
-        setInterval(setClock, 1000)
 
-        const hourHand = document.querySelector('[data-hour-hand]')
-        const minuteHand = document.querySelector('[data-minute-hand]')
-        const secondHand = document.querySelector('[data-second-hand]')
-
-        function setClock() {
-            const currentDate = new Date()
-            const secondsRatio = currentDate.getSeconds() / 60
-            const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60
-            const hoursRatio = (minutesRatio + currentDate.getHours()) / 12
-            setRotation(secondHand, secondsRatio)
-            setRotation(minuteHand, minutesRatio)
-            setRotation(hourHand, hoursRatio)
-        }
-
-        function setRotation(element, rotationRatio) {
-            element.style.setProperty('--rotation', rotationRatio * 360)
-        }
-        setClock()
-
-    </script>
+    <script src="../javascripts/clock.js"></script>
 </body>
 
 </html>

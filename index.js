@@ -4,6 +4,8 @@ app.set('view engine', 'ejs');
 
 const PORT = 5000;
 
+app.use(express.static('./public'));
+
 app.get('/', (req, res) => {
     // This is the main route for our application  
     res.render("home");
@@ -15,6 +17,10 @@ app.get('/gallery', (req, res) => {
 
 app.get('/watch', (req, res) => {
     res.render("watch");
+});
+
+app.get('/signup', (req, res) => {
+    res.render("signup");
 });
 
 // middleware 
@@ -38,6 +44,20 @@ app.get('/about', (req, res) => {
 app.get('/main', (req, res) => {
     res.send("Welcome to main page");
 });
+
+app.get('/error', (req, res, next) => {
+    throw Error('Something went wrong');
+});
+
+app.use(
+    function errorHandler(err, req, res, next) {
+        if (res.headersSent) {
+            return next(err);
+        }
+        res.status(500)
+        res.render('error', { error: err });
+    }
+);
 
 app.listen(PORT, function () {
     console.log('Server is running on port', PORT);
