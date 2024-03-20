@@ -46,18 +46,27 @@ app.get('/main', (req, res) => {
 });
 
 app.get('/error', (req, res, next) => {
-    throw Error('Something went wrong');
+    throw Error('Pata Nahi Bhai Kya Dikkat A Gai');
 });
 
-app.use(
-    function errorHandler(err, req, res, next) {
-        if (res.headersSent) {
-            return next(err);
-        }
-        res.status(500)
-        res.render('error', { error: err });
+// app.use(
+//     function errorHandler(err, req, res, next) {
+//         if (res.headersSent) {
+//             return next(err);
+//         }
+//         res.status(500)
+//         res.render('error', { error: err });
+//     }
+// );
+
+
+app.use((err, req, res, next) => {
+    if (res.headersSent) {
+        return next();
     }
-);
+    res.status(500);
+    res.render('error', { error: err });
+});
 
 app.listen(PORT, function () {
     console.log('Server is running on port', PORT);
