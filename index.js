@@ -5,7 +5,6 @@ app.set('view engine', 'ejs');
 const PORT = 5000;
 
 app.use(express.static('./public'));
-
 app.get('/', (req, res) => {
     // This is the main route for our application  
     res.render("home");
